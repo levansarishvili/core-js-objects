@@ -186,13 +186,14 @@ function sellTickets(queue) {
  *    console.log(r.getArea());   // => 200
  */
 function Rectangle(width, height) {
-  this.width = width;
-  this.height = height;
+  return {
+    width,
+    height,
+    getArea() {
+      return this.width * this.height;
+    },
+  };
 }
-
-Rectangle.prototype.getArea = function () {
-  return this.width * this.height;
-};
 
 /**
  * Returns the JSON representation of specified object
